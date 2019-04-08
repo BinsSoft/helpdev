@@ -1,0 +1,23 @@
+<div class="container">
+    <div class="header">
+      <div class="header-heading">{{ heading }}</div>
+      
+        <ul class="dropdown dropdown2">
+          <li class="dropdown-li" [class.active]="activeMenu == 'base64'">
+            <a>Base64</a>
+            <div class="dropdown-content">
+                <a [routerLink]="['/hash','encode', 'base64']" >Base64 Encoding</a>
+                <a [routerLink]="['/hash','decode', 'base64']" >Base64 Decoding</a>
+            </div>
+          </li>
+          <li class="dropdown-li" [class.active]="activeMenu == 'md5'"><a [routerLink]="['/encode', 'md5']">Md5</a></li>
+          <li class="dropdown-li" [class.active]="activeMenu == 'timestamp'"><a>TimeStamp</a></li>
+        
+      </ul>
+      <div class="clearfix"></div>
+    </div>
+    <div class="content">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+  

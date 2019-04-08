@@ -1,1 +1,111 @@
 /* You can add global styles to this file, and also import other style files */
+*{
+    padding: 0;
+    margin: 0;
+    font-family: arial;
+}
+body {
+    background: #3e3e3e;
+
+}
+.clearfix {clear: both;}
+.header {
+    position: relative;
+    padding: 10px;
+    .header-heading {
+        color: #FFF;
+        font-size: 20px;
+        font-weight: bold;
+        float: left;
+    }
+}
+.dropdown {
+    position: relative;
+    float: right;
+    li {
+        list-style: none;
+        display: inline-block;
+        margin: 0 5px;
+        // color: white;
+        // padding: 16px;
+        font-size: 16px;
+        border: none;
+        cursor: pointer;
+    }
+    a {
+        color:  #FFF;
+    }
+    li.active {
+        background-color: #4CAF50;
+    }
+    // li.active a {
+    //     color: #FFF;
+    // }
+    // li.active:hover a {
+    //     color: #000;
+    // }
+
+}
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 100%;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    a {
+        color: #000;
+    }
+
+}
+.dropdown a {
+    // color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+.dropdown-li:hover .dropdown-content {
+    display: block;
+    // top: 50px;
+    right: 0;
+}
+.dropdown-content a:hover {
+    background-color: #4CAF50;
+    color: #FFF;
+    
+}
+
+.content {
+    background: #FFF;
+    margin: 0 10px;
+    min-height: calc(100vh - 90px);
+    padding: 5px 10px 0 10px;
+}
+
+.action-conatiner {
+    textarea {
+        width: 100%;
+        height: 300px;
+        border: 1px solid #CCC;
+        outline: none;
+        
+    }
+    .action-header {
+        h2 {
+            float: left;
+        }
+        .right-action-header {
+            float: right;
+            button {
+                outline: none;
+                padding: 10px;
+                margin: 2px 5px;
+                background: #3e3e3e;
+                color: #FFF;
+                border: none;
+                border-radius: 2px;
+            }
+        }
+    }
+}
