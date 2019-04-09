@@ -24,7 +24,7 @@ export class LayoutComponent implements OnInit {
           break;
           case "/hash/encode/md5":
           this.activeMenu = 'md5';
-          this.heading = 'md5 Hash';
+          this.heading = 'Md5 Encoding';
           break;
         }
       }

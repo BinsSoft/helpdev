@@ -302,3 +302,6 @@ THE SOFTWARE.
 
 @angular/forms
 MIT
+
+ts-md5
+MIT

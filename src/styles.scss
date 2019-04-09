@@ -26,8 +26,6 @@ body {
         list-style: none;
         display: inline-block;
         margin: 0 5px;
-        // color: white;
-        // padding: 16px;
         font-size: 16px;
         border: none;
         cursor: pointer;
@@ -38,12 +36,7 @@ body {
     li.active {
         background-color: #4CAF50;
     }
-    // li.active a {
-    //     color: #FFF;
-    // }
-    // li.active:hover a {
-    //     color: #000;
-    // }
+
 
 }
 .dropdown-content {
@@ -60,14 +53,12 @@ body {
 
 }
 .dropdown a {
-    // color: black;
     padding: 12px 16px;
     text-decoration: none;
     display: block;
 }
 .dropdown-li:hover .dropdown-content {
     display: block;
-    // top: 50px;
     right: 0;
 }
 .dropdown-content a:hover {

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
+import {Md5} from 'ts-md5/dist/md5';
 @Component({
   selector: 'app-encodedecode',
   templateUrl: './encodedecode.component.html',
@@ -25,6 +26,9 @@ export class EncodedecodeComponent implements OnInit {
       this.convertResult = btoa(this.convertKeyWord);
     } else if (this.method == 'decode'  && this.type == 'base64') {
       this.convertResult = atob(this.convertKeyWord);
+    }
+    else if (this.method == 'encode'  && this.type == 'md5') {
+      this.convertResult = Md5.hashStr(this.convertKeyWord);
     }
   }
   reset() {
