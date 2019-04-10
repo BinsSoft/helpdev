@@ -7,8 +7,8 @@
       </div>
       <div class="clearfix"></div>
     </div>
-    <textarea *ngIf="type!='base64-image'" [(ngModel)]="convertKeyWord"></textarea>
-    <input type="file" *ngIf="type=='base64-image'" #uploadFile />
+    <textarea *ngIf="type!='base64-file'" [(ngModel)]="convertKeyWord"></textarea>
+    <input type="file" *ngIf="type=='base64-file'" #uploadFile />
     <div class="result-container">
       <div class="action-header">
         <h2>Result :</h2>
