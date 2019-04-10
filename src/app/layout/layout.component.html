@@ -3,14 +3,19 @@
       <div class="header-heading">{{ heading }}</div>
       
         <ul class="dropdown dropdown2">
-          <li class="dropdown-li" [class.active]="activeMenu == 'base64'">
-            <a>Base64</a>
+          <li class="dropdown-li" [class.active]="activeMenu == 'encode_decode'">
+            <a>Encode / Decode</a>
             <div class="dropdown-content">
-                <a [routerLink]="['/hash','encode', 'base64']" >Base64 Encoding</a>
-                <a [routerLink]="['/hash','decode', 'base64']" >Base64 Decoding</a>
+                <a [routerLink]="['/hash','encode', 'base64']" >Base64 Encode</a>
+                <a [routerLink]="['/hash','decode', 'base64']" >Base64 Decode</a>
+                <a [routerLink]="['/hash','encode', 'base64-file']" >File Base64 Encode</a>
+                <a [routerLink]="['/hash','encode', 'md5']">Md5 Encode</a>
+                <a [routerLink]="['/hash','encode', 'sha256']">SHA256 Encode</a>
+                <a [routerLink]="['/hash','encode', 'SHA224']">SHA224 Encode</a>
+                <a [routerLink]="['/hash','encode', 'url']">URL Encode</a>
+                <a [routerLink]="['/hash','decode', 'url']">URL Decode</a>
             </div>
           </li>
-          <li class="dropdown-li" [class.active]="activeMenu == 'md5'"><a [routerLink]="['/hash','encode', 'md5']">Md5</a></li>
           <li class="dropdown-li" [class.active]="activeMenu == 'timestamp'"><a>TimeStamp</a></li>
         
       </ul>

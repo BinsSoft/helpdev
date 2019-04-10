@@ -1,14 +1,14 @@
 <div class="action-conatiner">
     <div class="action-header">
-      <h2>Enter Text :</h2>
+      <h2>Enter Text  for {{ type }} {{ method }}:</h2>
       <div class="right-action-header">
         <button (click)="convert()">Convert</button>
         <button (click)="reset()">Reset</button>
       </div>
       <div class="clearfix"></div>
     </div>
-    <textarea [(ngModel)]="convertKeyWord"></textarea>
-  
+    <textarea *ngIf="type!='base64-image'" [(ngModel)]="convertKeyWord"></textarea>
+    <input type="file" *ngIf="type=='base64-image'" #uploadFile />
     <div class="result-container">
       <div class="action-header">
         <h2>Result :</h2>

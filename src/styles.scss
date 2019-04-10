@@ -26,7 +26,7 @@ body {
         list-style: none;
         display: inline-block;
         margin: 0 5px;
-        font-size: 16px;
+        font-size: 14px;
         border: none;
         cursor: pointer;
     }
@@ -53,7 +53,7 @@ body {
 
 }
 .dropdown a {
-    padding: 12px 16px;
+    padding: 12px 14px;
     text-decoration: none;
     display: block;
 }
@@ -85,6 +85,7 @@ body {
     .action-header {
         h2 {
             float: left;
+            text-transform: capitalize;
         }
         .right-action-header {
             float: right;
@@ -99,4 +100,7 @@ body {
             }
         }
     }
+}
+div#resultContent {
+    word-break: break-all;
 }

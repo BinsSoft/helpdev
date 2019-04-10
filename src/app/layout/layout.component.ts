@@ -8,25 +8,16 @@ import { Router, NavigationEnd } from '@angular/router';
 })
 export class LayoutComponent implements OnInit {
   activeMenu: any = '';
-  heading: any = '';
+  heading: any = 'Bins Helpdev';
   constructor(private commonService: CommonService, private route: Router) {
     this.route.events.subscribe((event) => {
       
       if (event instanceof NavigationEnd) {
-        switch(route.url) {
-          case "/hash/encode/base64":
-          this.activeMenu = 'base64';
-          this.heading = 'Base64 Encoding';
-          break;
-          case "/hash/decode/base64":
-          this.activeMenu = 'base64';
-          this.heading = 'Base64 Decoding';
-          break;
-          case "/hash/encode/md5":
-          this.activeMenu = 'md5';
-          this.heading = 'Md5 Encoding';
-          break;
+        let encodeDecodeUrlStatus = route.url.indexOf('/hash/');
+        if (encodeDecodeUrlStatus > -1) {
+          this.activeMenu = 'encode_decode';
         }
+        
       }
     })
   }
