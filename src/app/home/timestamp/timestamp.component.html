@@ -1,0 +1,23 @@
+<div class="timestamp-container">
+  <div class="left-container">
+    <div class="input-container">
+      <input type="text" name="" id="" class="time-stamp-text" [(ngModel)]="currentTimeStamp">
+      <p class="disabled-text">seconds since Jan 01 1970. (UTC)</p>
+    </div>
+    <div class="result-container">
+      <p class="time-row">
+        <label>UTC</label><span>{{timeData.utcTime}}</span>
+      </p>
+      <p  class="time-row">
+        <label>Current Time</label><span>{{timeData.clientTime}}</span>
+      </p>
+
+      <p  class="time-row">
+        <ng-select class="custom" [items]="timezoneList"></ng-select>
+      </p>
+      
+      
+    </div>
+  </div>
+  <div class="right-container"></div>
+</div>

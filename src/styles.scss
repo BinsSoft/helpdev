@@ -1,3 +1,5 @@
+@import "~@ng-select/ng-select/themes/material.theme.css";
+
 /* You can add global styles to this file, and also import other style files */
 *{
     padding: 0;
@@ -103,4 +105,55 @@ body {
 }
 div#resultContent {
     word-break: break-all;
+}
+
+.timestamp-container {
+    padding-top: 10px;
+    position: relative;
+    .input-container {
+        position: relative;
+        text-align: center;
+        padding-bottom:10px; 
+        .time-stamp-text {
+            position: relative;
+            width: 90%;
+            border: none;
+            border-bottom: 1px solid #CCC;
+            padding: 10px;
+            font-size: 25px;
+            font-weight: bold;
+            text-align: center;
+            outline: none;
+        }
+    }
+    .left-container {
+        float: left;
+        width: 49%;
+        border: 1px solid #CCC;
+        height: 100%;
+    }
+    .right-container {
+        float: right;
+        width: 49%;
+        border: 1px solid #CCC;
+        height: 100%;
+    }
+}
+.disabled-text {
+    font-size: 12px;
+    color: #CCC;
+}
+.timestamp-container {
+    .result-container {
+        .time-row {
+            padding: 10px;
+
+            label {
+                display: inline-block;
+                width: 150px;
+                font-weight: bold;
+            }
+        }
+
+    }
 }

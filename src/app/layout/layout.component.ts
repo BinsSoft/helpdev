@@ -17,6 +17,9 @@ export class LayoutComponent implements OnInit {
         if (encodeDecodeUrlStatus > -1) {
           this.activeMenu = 'encode_decode';
         }
+        else if(route.url.indexOf('/timestamp')>-1) {
+          this.activeMenu = 'timestamp';
+        }
         
       }
     })
