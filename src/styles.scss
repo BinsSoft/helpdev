@@ -11,6 +11,7 @@ body {
 
 }
 .clearfix {clear: both;}
+.text-center { text-align: center;}
 .header {
     position: relative;
     padding: 10px;
@@ -25,6 +26,7 @@ body {
     position: relative;
     float: right;
     li {
+        position: relative;
         list-style: none;
         display: inline-block;
         margin: 0 5px;
@@ -41,12 +43,14 @@ body {
 
 
 }
+
 .dropdown-content {
     display: none;
     position: absolute;
     background-color: #f9f9f9;
-    min-width: 100%;
+    min-width: 200px;
     overflow: auto;
+    left: 0;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
     a {
@@ -125,6 +129,27 @@ div#resultContent {
             text-align: center;
             outline: none;
         }
+        
+        .time-text {
+            position: relative;
+            width: 60px;
+            
+            border: none;
+            border-bottom: 1px solid #CCC;
+            padding: 10px;
+            font-size: 25px;
+            font-weight: bold;
+            text-align: center;
+            outline: none;
+        }
+        .convert-btn {
+            background-color: #4CAF50;
+            padding: 10px;
+            color: #FFF;
+            border: none;
+            width: 90px;
+
+        }
     }
     .left-container {
         float: left;
@@ -139,6 +164,12 @@ div#resultContent {
         height: 100%;
     }
 }
+@media only screen and (max-width:768px) {
+    .timestamp-container {
+        .left-container { float : none; width: 100% }
+        .right-container { float : none; width: 100% }
+    }
+}
 .disabled-text {
     font-size: 12px;
     color: #CCC;
@@ -150,7 +181,7 @@ div#resultContent {
 
             label {
                 display: inline-block;
-                width: 150px;
+                width: 200px;
                 font-weight: bold;
             }
         }

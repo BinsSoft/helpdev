@@ -6,8 +6,9 @@ import { HomeRoutingModule } from './home-routing.module';
 
 import { EncodedecodeComponent } from './encodedecode/encodedecode.component';
 import { TimestampComponent } from './timestamp/timestamp.component';
+import { LandingComponent } from './landing/landing.component';
 @NgModule({
-  declarations: [ EncodedecodeComponent, TimestampComponent],
+  declarations: [ EncodedecodeComponent, TimestampComponent, LandingComponent],
   imports: [
     CommonModule,
     HomeRoutingModule,
