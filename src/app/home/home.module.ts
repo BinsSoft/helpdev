@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { NgSelectModule } from '@ng-select/ng-select';
 import { HomeRoutingModule } from './home-routing.module';
 import { NgxJsonViewerModule } from 'ngx-json-viewer';
+
 import { EncodedecodeComponent } from './encodedecode/encodedecode.component';
 import { TimestampComponent } from './timestamp/timestamp.component';
 import { LandingComponent } from './landing/landing.component';

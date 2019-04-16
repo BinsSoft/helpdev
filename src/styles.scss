@@ -95,7 +95,6 @@ body {
   margin: 0 10px;
   min-height: calc(100vh - 90px);
   padding: 5px 10px 0 10px;
-  overflow: scroll;
 }
 
 .action-conatiner {
@@ -116,7 +115,7 @@ body {
     .right-action-header {
       float: right;
 
-      button {
+      button, .btn {
         outline: none;
         padding: 10px;
         margin: 2px 5px;
@@ -129,9 +128,12 @@ body {
   }
 }
 
-div#resultContent {
+div#resultContent textarea {
   word-break: break-all;
+  height: calc(100vh - 140px);
+  border: none;
 }
+
 
 .timestamp-container {
   padding-top: 10px;
