@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { EncodedecodeComponent } from './encodedecode/encodedecode.component';
 import { TimestampComponent } from './timestamp/timestamp.component';
 import { LandingComponent } from './landing/landing.component';
+import { FormaterComponent } from './formater/formater.component';
 const routes: Routes = [
   {
     path :"",
@@ -15,6 +16,10 @@ const routes: Routes = [
   {
     path :"timestamp",
     component: TimestampComponent
+  },
+  {
+    path :"format/:method/:ext",
+    component: FormaterComponent
   },
 ];
 

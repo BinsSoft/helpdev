@@ -17,13 +17,12 @@
         </div>
       </li>
 
-      <li class="dropdown-li" [class.active]="activeMenu == 'formater'">
+      <li class="dropdown-li" [class.active]="activeMenu == 'format'">
         <a>Formaters</a>
         <div class="dropdown-content">
-          <a [routerLink]="['/hash','encode', 'base64']">Css Formaters</a>
-          <a [routerLink]="['/hash','decode', 'base64']">Js Formaters</a>
-          <a [routerLink]="['/hash','encode', 'base64-file']">HTML Formaters</a>
-          <a [routerLink]="['/hash','encode', 'md5']">XML Formaters</a>
+          <a [routerLink]="['/format','beautify', 'json']">JSON Beautify</a>
+          <a [routerLink]="['/format','minify', 'json']">JSON Minify</a>
+          
         </div>
       </li>
       <li class="dropdown-li" [class.active]="activeMenu == 'timestamp'"><a [routerLink]="['/timestamp']">TimeStamp</a>

@@ -20,6 +20,9 @@ export class LayoutComponent implements OnInit {
         else if(route.url.indexOf('/timestamp')>-1) {
           this.activeMenu = 'timestamp';
         }
+        else if(route.url.indexOf('/format')>-1) {
+          this.activeMenu = 'format';
+        }
         
       }
     })
