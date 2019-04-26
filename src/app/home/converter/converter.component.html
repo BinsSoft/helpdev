@@ -1,0 +1,12 @@
+<div class="action-conatiner">
+  <div class="left-container">
+    <input type="text" name="" id="" [(ngModel)]="converterText" />
+  </div>
+  <div class="right-container">
+    <ng-select class="custom" [(ngModel)]="converterType" bindValue="id" bindLabel="text" [items]="converterTypeData" (change)="convertDataSet()" >
+    </ng-select>
+    <div class="result-area">
+      {{convertResult}}
+    </div>
+  </div>
+</div>

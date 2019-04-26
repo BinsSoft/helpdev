@@ -39,6 +39,7 @@ export class FormaterComponent implements OnInit {
     this.activatedRoute.params.subscribe((params) => {
       this.method = params.method;
       this.type = params.ext;
+      this.reset();
     });
   }
   ngOnInit() {
@@ -63,6 +64,9 @@ export class FormaterComponent implements OnInit {
       }
       else if (this.method == 'beautify' && this.type == 'css') {
         this.convertResult = beautify.css(this.convertKeyWord, this.beautyfyOption);
+      }
+      else if (this.method == 'beautify' && this.type == 'html') {
+        this.convertResult = beautify.html(this.convertKeyWord, this.beautyfyOption);
       }
       else if (this.method == 'minify') {
         this.convertResult = this.convertKeyWord.replace(/\s\s+/g, " ");

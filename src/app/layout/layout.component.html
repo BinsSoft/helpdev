@@ -28,9 +28,19 @@
 
           <a [routerLink]="['/format','beautify', 'css']">CSS Beautify</a>
           <a [routerLink]="['/format','minify', 'css']">CSS Minify</a>
+
+          <a [routerLink]="['/format','beautify', 'html']">HTML Beautify</a>
+          <a [routerLink]="['/format','minify', 'html']">HTML Minify</a>
           
         </div>
       </li>
+      <!-- <li class="dropdown-li" [class.active]="activeMenu == 'converter'">
+        <a>Converter</a>
+        <div class="dropdown-content">
+          <a [routerLink]="['/converter','numbers']">Numbers</a>
+          
+        </div>
+      </li> -->
       <li class="dropdown-li" [class.active]="activeMenu == 'timestamp'"><a [routerLink]="['/timestamp']">TimeStamp</a>
       </li>
     </ul>

@@ -4,6 +4,7 @@ import { EncodedecodeComponent } from './encodedecode/encodedecode.component';
 import { TimestampComponent } from './timestamp/timestamp.component';
 import { LandingComponent } from './landing/landing.component';
 import { FormaterComponent } from './formater/formater.component';
+import { ConverterComponent } from './converter/converter.component';
 const routes: Routes = [
   {
     path :"",
@@ -20,6 +21,10 @@ const routes: Routes = [
   {
     path :"format/:method/:ext",
     component: FormaterComponent
+  },
+  {
+    path :"converter/:method",
+    component: ConverterComponent
   },
 ];
 

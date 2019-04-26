@@ -23,6 +23,10 @@ export class LayoutComponent implements OnInit {
         else if(route.url.indexOf('/format')>-1) {
           this.activeMenu = 'format';
         }
+        else if(route.url.indexOf('/converter')>-1) {
+          this.activeMenu = 'converter';
+        }
+        
         
       }
     })

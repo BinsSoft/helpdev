@@ -9,8 +9,9 @@ import { EncodedecodeComponent } from './encodedecode/encodedecode.component';
 import { TimestampComponent } from './timestamp/timestamp.component';
 import { LandingComponent } from './landing/landing.component';
 import { FormaterComponent } from './formater/formater.component';
+import { ConverterComponent } from './converter/converter.component';
 @NgModule({
-  declarations: [ EncodedecodeComponent, TimestampComponent, LandingComponent, FormaterComponent],
+  declarations: [ EncodedecodeComponent, TimestampComponent, LandingComponent, FormaterComponent, ConverterComponent],
   imports: [
     CommonModule,
     HomeRoutingModule,
