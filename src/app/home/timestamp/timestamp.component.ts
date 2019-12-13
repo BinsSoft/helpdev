@@ -66,11 +66,9 @@ export class TimestampComponent implements OnInit {
 
   }
 
-  changeTimeStamp(e) {
-    if (e.which == 13) {
+  changeTimeStamp() {
       this.setDateTime();
       this.changeTimezone();
-    }
   }
   checkNumberInput(e) {
     console.log(e.which);

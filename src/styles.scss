@@ -115,7 +115,8 @@ body {
     .right-action-header {
       float: right;
 
-      button, .btn {
+      button,
+      .btn {
         outline: none;
         padding: 10px;
         margin: 2px 5px;
@@ -146,10 +147,10 @@ div#resultContent textarea {
 
     .time-stamp-text {
       position: relative;
-      width: 90%;
+      width: 82%;
       border: none;
       border-bottom: 1px solid #CCC;
-      padding: 10px;
+      padding: 6px;
       font-size: 25px;
       font-weight: bold;
       text-align: center;
@@ -202,8 +203,8 @@ div#resultContent textarea {
 
 .converter-textarea::placeholder {
   color: #222;
- font-size: 25px;
- font-weight: bold;
+  font-size: 25px;
+  font-weight: bold;
   opacity: 0.2;
   /* Firefox */
 }
@@ -213,7 +214,7 @@ div#resultContent textarea {
   color: #222;
   font-size: 25px;
   font-weight: bold;
-   opacity: 0.2;
+  opacity: 0.2;
 }
 
 .converter-textarea::-ms-input-placeholder {
@@ -221,7 +222,7 @@ div#resultContent textarea {
   color: #222;
   font-size: 25px;
   font-weight: bold;
-   opacity: 0.2;
+  opacity: 0.2;
 }
 
 @media only screen and (max-width:768px) {
@@ -260,7 +261,66 @@ div#resultContent textarea {
   color: red;
   font-size: 16px;
 }
+
 .or-text {
-    padding: 10px;
+  padding: 10px;
+  font-weight: bold;
+}
+.row {
+  padding: 5px;
+  position: relative;
+
+  .form-err {
+    position: absolute;
+    bottom: 5px;
+    left: 0;
+    font-size: 10px;
+    background: rgba(241, 177, 177, 0.5);
+    padding: 4px 10px;
+    color: #981c1c;
+    border: 1px solid #981c1c;
+    border-radius: 3px;
+  }
+  .form-err.input {
+    width: auto;
+    position: absolute;
+    bottom: -15px;
+    left: 0;
+    font-size: 10px;
+    background: rgba(241, 177, 177, 0.5);
+    padding: 4px 10px;
+    color: #981c1c;
+    border: 1px solid #981c1c;
+    border-radius: 3px;
+  }
+  .input {
+    border: none;
+    border-bottom: 1px solid #CCC;
+    padding: 10px 0;
+    width: 100%;
+    outline: none;
+  }
+
+  .btn {
+    padding: 10px 15px;
+    background: #4CAF50;
+    border: none;
+    outline: navajowhite;
+    color: #FFF;
+    font-size: 15px;
     font-weight: bold;
+    text-transform: uppercase;
+  }
+}
+.converter-container {
+  width: 50%;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #CCC;
+}
+
+@media only screen and (max-width:768px) {
+  .converter-container {
+    width: 100%;
+  }
 }

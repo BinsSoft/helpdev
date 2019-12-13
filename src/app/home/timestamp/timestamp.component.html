@@ -1,8 +1,10 @@
 <div class="timestamp-container">
   <div class="left-container">
     <div class="input-container">
-      <input type="text" class="time-stamp-text" [(ngModel)]="currentTimeStamp" (keydown)="checkNumberInput($event)"
-        (keyup)="changeTimeStamp($event)">
+
+      <input type="text" class="time-stamp-text" [(ngModel)]="currentTimeStamp" appOnlynumaricinput>
+      
+      <input type="button" class="convert-btn" value="Convert" (click)="changeTimeStamp()" />
       <p class="disabled-text">seconds since Jan 01 1970. (UTC)</p>
     </div>
     <div class="result-container">
@@ -28,28 +30,28 @@
       <table cellspacing="5" style="width:100%">
         <tr>
         <td class="time-box">
-          <input type="text" class="time-text" placeholder="Y" [(ngModel)]="currentTimeData.year"
-            (keydown)="checkNumberInput($event)">
+          <input type="text" class="time-text" minlength="4" maxlength="4" placeholder="Y" [(ngModel)]="currentTimeData.year"
+            appOnlynumaricinput>
         </td>
         <td class="time-box">
-          <input type="text" class="time-text" placeholder="M" [(ngModel)]="currentTimeData.month"
-            (keydown)="checkNumberInput($event)">
+          <input type="text" class="time-text" minlength="2" maxlength="2" placeholder="M" [(ngModel)]="currentTimeData.month"
+          appOnlynumaricinput>
         </td>
         <td class="time-box">
-          <input type="text" class="time-text" placeholder="D" [(ngModel)]="currentTimeData.day"
-            (keydown)="checkNumberInput($event)">
+          <input type="text" class="time-text" minlength="2" maxlength="2" placeholder="D" [(ngModel)]="currentTimeData.day"
+          appOnlynumaricinput>
         </td>
         <td class="time-box">
-          <input type="text" class="time-text" placeholder="hh" [(ngModel)]="currentTimeData.hour"
-            (keydown)="checkNumberInput($event)">
+          <input type="text" class="time-text" minlength="2" maxlength="2" placeholder="hh" [(ngModel)]="currentTimeData.hour"
+          appOnlynumaricinput>
         </td>
         <td class="time-box">
-          <input type="text" class="time-text" placeholder="mm" [(ngModel)]="currentTimeData.min"
-            (keydown)="checkNumberInput($event)">
+          <input type="text" class="time-text" minlength="2" maxlength="2" placeholder="mm" [(ngModel)]="currentTimeData.min"
+          appOnlynumaricinput>
         </td>
         <td class="time-box">
-          <input type="text" class="time-text" placeholder="ss" [(ngModel)]="currentTimeData.sec"
-            (keydown)="checkNumberInput($event)">
+          <input type="text" class="time-text" minlength="2" maxlength="2" placeholder="ss" [(ngModel)]="currentTimeData.sec"
+          appOnlynumaricinput>
         </td>
         <td class="time-box text-center" >
           <input type="button" class="convert-btn" value="Convert" (click)="getTimeStampFromDate()" />

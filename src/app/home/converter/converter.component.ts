@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { ActivatedRoute } from "@angular/router";
 @Component({
   selector: 'app-converter',
   templateUrl: './converter.component.html',
@@ -7,29 +7,43 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ConverterComponent implements OnInit {
 
-  converterText:any = '';
-  converterType:any = '';
-  convertResult:any = '';
-  converterTypeData:any = [
-    {"id":'b',"text":"Byte(B)"},
-    {"id":'kb',"text":"Kilobyte(KB)"},
-    {"id":'Mb',"text":"Megabyte(MB)"},
-    {"id":'gb',"text":"Gigabyte(GB)"},
-    {"id":'tb',"text":"Terabyte(TB)"}
-  ]
-  constructor() { }
+  converterText: any = '';
+  converterType: any = '';
+  convertResult: any = '';
+  converterTypeData: any = {
+    "data-size": [
+      { "id": 'b', "text": "Byte(B)" },
+      { "id": 'kb', "text": "Kilobyte(KB)" },
+      { "id": 'Mb', "text": "Megabyte(MB)" },
+      { "id": 'gb', "text": "Gigabyte(GB)" },
+      { "id": 'tb', "text": "Terabyte(TB)" }
+    ]
+  };
+  convertForm = {
+    "value":"",
+    "from":null,
+    "to":null,
+    "submit": false
+  }
+  constructor(private activatedRoute: ActivatedRoute) {
+    this.activatedRoute.params.subscribe((params) => {
+      this.converterType = params.method;
+    });
+  }
 
   ngOnInit() {
+    console.log(this.converterType);
   }
 
-  convertDataSet() {
-    switch(this.converterType) {
-      case 1:
-      this.convertResult = this.converterText.split('').map(function (char) {
-        return char.charCodeAt(0).toString(2);
-    }).join('');
-      break;
+  convertAction() {
+    let error = 0;
+    this.convertForm.submit = true;
+    if (!this.convertForm.value || !this.convertForm.from || !this.convertForm.to) {
+      error = 1;
     }
-    
+    if (error == 0) {
+
+    }
   }
+  
 }

@@ -17,13 +17,13 @@
 
     <div class="action-header">
       <h2>Result :</h2>
-      <div class="right-action-header">
+      <div class="right-action-header" *ngIf="method=='beautify' && type!='json'">
         <button (click)="copy()" class="btn">Copy</button>
         <a (click)="download()" class="btn">Download</a>
       </div>
       <div class="clearfix"></div>
     </div>
-    <div class="result-content" id="resultContent">
+    <div class="result-content" id="resultContent" *ngIf="method=='beautify' && type!='json'">
       <textarea>{{convertResult}}</textarea>
     </div>
     <ngx-json-viewer [json]="jsonResultData"  *ngIf="method=='beautify' && type=='json'"></ngx-json-viewer>

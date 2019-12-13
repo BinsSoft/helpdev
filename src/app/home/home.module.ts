@@ -10,8 +10,9 @@ import { TimestampComponent } from './timestamp/timestamp.component';
 import { LandingComponent } from './landing/landing.component';
 import { FormaterComponent } from './formater/formater.component';
 import { ConverterComponent } from './converter/converter.component';
+import { OnlynumaricinputDirective } from './onlynumaricinput.directive';
 @NgModule({
-  declarations: [ EncodedecodeComponent, TimestampComponent, LandingComponent, FormaterComponent, ConverterComponent],
+  declarations: [ EncodedecodeComponent, TimestampComponent, LandingComponent, FormaterComponent, ConverterComponent,OnlynumaricinputDirective],
   imports: [
     CommonModule,
     HomeRoutingModule,

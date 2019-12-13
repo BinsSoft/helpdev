@@ -1,12 +1,27 @@
 <div class="action-conatiner">
-  <div class="left-container">
-    <input type="text" name="" id="" [(ngModel)]="converterText" />
-  </div>
-  <div class="right-container">
-    <ng-select class="custom" [(ngModel)]="converterType" bindValue="id" bindLabel="text" [items]="converterTypeData" (change)="convertDataSet()" >
-    </ng-select>
-    <div class="result-area">
-      {{convertResult}}
+  <div class="converter-container">
+    <div class="row">
+        <input type="text" name="" id="" [(ngModel)]="convertForm.value" class="input" placeholder="Enter Value"/>  
+        <span class="form-err input" *ngIf="convertForm.submit == true && !convertForm.value">Please enter value</span>
+    </div>
+    <div class="row">
+        <ng-select class="custom" [(ngModel)]="convertForm.from" placeholder="From" bindValue="id" bindLabel="text" [items]="converterTypeData[converterType]"  >
+          </ng-select>  
+          <span class="form-err" *ngIf="convertForm.submit == true && !convertForm.from">Please enter from value</span>
+    </div>
+    <div class="row">
+        <ng-select class="custom" [(ngModel)]="convertForm.to" placeholder="To" bindValue="id" bindLabel="text" [items]="converterTypeData[converterType]"  >
+          </ng-select>  
+          <span class="form-err" *ngIf="convertForm.submit == true && !convertForm.to">Please enter to value</span>
+    </div>
+    <div class="row text-center">
+      <input type="button" value="Convert" class="btn btn-convert" (click)="convertAction()"/>
+    </div>
+    <div class="row">
+        <div class="result-area">
+            {{convertResult}}
+          </div>
     </div>
   </div>
+  
 </div>
