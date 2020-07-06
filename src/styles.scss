@@ -22,16 +22,46 @@ body {
 
 .header {
   position: relative;
-  padding: 10px;
+  padding: 10px 10px 0 10px;
 
   .header-heading {
     color: #FFF;
-    font-size: 20px;
+    
     font-weight: bold;
     float: left;
+    img {
+      width: 84px;
+    }
   }
 }
-
+.landing-menu {
+  .menu-inner {
+    h2 {
+      text-align: center;
+      padding: 10px;
+      border-bottom: 1px solid #CCC;
+      margin: 10px;
+    }
+    .menu-content {
+      display: flex;
+      justify-content: space-evenly;
+      flex-wrap: wrap;
+      a {
+        border: 1px solid #CCC;
+        text-decoration: none;
+        padding: 20px 10px;
+        color: #222;
+        width: 20%;
+        text-align: center;
+        margin: 5px;
+        &:hover {
+          background-color: #4CAF50;
+          color: #FFF;
+        }
+      }
+    }
+  }
+}
 .dropdown {
   position: relative;
   float: right;
@@ -98,12 +128,77 @@ body {
 }
 
 .action-conatiner {
-  textarea {
-    width: 100%;
-    height: 300px;
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  height: calc(100vh - 90px);
+  .left-container {
+    width: 45%;
     border: 1px solid #CCC;
-    outline: none;
+    height: 99%;
+    display: flex;
+    align-self: stretch;
+    textarea {
+      width: 100%;
+      outline: none;
+      border: none;
+    }
+  }
+  
+  .right-container {
+    width: 45%;
+    border: 1px solid #CCC;
+    height: 99%;
+    display: flex;
+    align-self: stretch;
+    .result-content {
+      width: 100%;
+      word-break: break-all;
+      display: flex;
+      align-self: stretch;
+      textarea {
+        width: 100%;
+        outline: none;
+        border: none;
+      }
+      
+    }
+  }
+  .mid-container {
+      display: flex;
+      flex-direction: column;
+      align-self: center;
+      button {
+        background-color: #3e3e3e;
+        border: none;
+        color: #FFF;
+        margin: 2px 0;
+        padding: 10px;
+        outline: none;
+        cursor: pointer;
+        width: 100px;
+        &:hover,&.active {
+          background: #4caf50;
+        }
+      }
+  }
+  .ngx-json-viewer {
+    font-size: 13px !important;
+    padding: 5px;
+    .toggler {
+      &:after {
+        color: #3e3e3e;
+      }
+    }
+    .segment-key {
+      font-weight: bold;
+    }
+    .segment-separator {
 
+    }
+    .segment-value {
+      font-weight: normal;
+    }
   }
 
   .action-header {
@@ -131,7 +226,7 @@ body {
 
 div#resultContent textarea {
   word-break: break-all;
-  height: calc(100vh - 140px);
+  // height: calc(100vh - 140px);
   border: none;
 }
 
@@ -182,24 +277,15 @@ div#resultContent textarea {
 
 }
 
-.left-container {
-  float: left;
-  width: 49%;
-  border: 1px solid #CCC;
-  height: 100%;
-}
 
-.right-container {
-  float: right;
-  width: 49%;
-  border: 1px solid #CCC;
-  height: 100%;
-}
 
-.converter-textarea {
-  min-height: calc(100vh - 200px);
-  border: none !important;
-}
+// .converter-textarea{
+//   min-height: calc(100vh - 200px);
+//   border: none !important;
+//   &.encoder {
+//     min-height: calc(100vh - 150px);
+//   }
+// }
 
 .converter-textarea::placeholder {
   color: #222;

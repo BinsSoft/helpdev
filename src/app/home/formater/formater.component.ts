@@ -55,6 +55,7 @@ export class FormaterComponent implements OnInit {
 
       if (this.method == 'beautify' && this.type == 'json') {
         this.jsonResultData = JSON.parse(this.convertKeyWord);
+        this.convertResult = JSON.stringify(JSON.parse(this.convertKeyWord),null, 4);
       }
       else if (this.method == 'minify' && this.type == 'json') {
         this.convertResult = JSON.stringify(JSON.parse(this.convertKeyWord));

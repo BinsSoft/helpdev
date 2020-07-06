@@ -1,36 +1,43 @@
 <div class="action-conatiner">
   <div class="left-container">
-    <div class="action-header">
+    <!--<div class="action-header">
       <h2> {{ method }} {{ type }} :</h2>
-      <div class="right-action-header">
+       <div class="right-action-header">
         <button (click)="convert()">Convert</button>
         <button (click)="reset()">Reset</button>
-      </div>
+      </div> 
       <div class="clearfix"></div>
-    </div>
-    <input type="file"  #uploadFile accept=".{{type}}"  (change)="renderUploadedFile($event)"/>
-    <p class="or-text">Or</p>
-    <textarea  [(ngModel)]="convertKeyWord" class="converter-textarea" placeholder="Enter Text"></textarea>
+    </div>-->
+    <!-- <input type="file"  #uploadFile accept=".{{type}}"  (change)="renderUploadedFile($event)"/>
+    <p class="or-text">Or</p> -->
+    <textarea [(ngModel)]="convertKeyWord" class="converter-textarea"
+      placeholder="Enter Text to {{ method }} {{ type }}"></textarea>
+  </div>
+  <div class="mid-container">
+    <button (click)="convert()">Convert</button>
+    <button (click)="reset()">Reset</button>
+    <button (click)="copy()" class="btn">Copy</button>
+    <button (click)="download()" class="btn">Download</button>
+
+    <button [ngClass]="{'active':(!viewMode || (viewMode && viewMode == 'text'))}" (click)="viewMode='text'"
+      *ngIf="method=='beautify' && type=='json'">Text Mode</button>
+    <button [ngClass]="{'active':(viewMode && viewMode == 'viewer')}" (click)="viewMode='viewer'"
+      *ngIf="method=='beautify' && type=='json'">Viewer Mode</button>
   </div>
   <div class="right-container">
-  <div class="result-container">
-
-    <div class="action-header">
-      <h2>Result :</h2>
-      <div class="right-action-header" *ngIf="method=='beautify' && type!='json'">
-        <button (click)="copy()" class="btn">Copy</button>
-        <a (click)="download()" class="btn">Download</a>
-      </div>
-      <div class="clearfix"></div>
-    </div>
     <div class="result-content" id="resultContent" *ngIf="method=='beautify' && type!='json'">
-      <textarea>{{convertResult}}</textarea>
+      <textarea class="converter-textarea">{{convertResult}}</textarea>
     </div>
-    <ngx-json-viewer [json]="jsonResultData"  *ngIf="method=='beautify' && type=='json'"></ngx-json-viewer>
+    <div class="result-content" *ngIf="method=='beautify' && type=='json'">
+
+      <textarea class="converter-textarea"
+        *ngIf="!viewMode || (viewMode && viewMode == 'text')">{{convertResult}}</textarea>
+      <ngx-json-viewer *ngIf="viewMode == 'viewer'" [expanded]="false" [json]="jsonResultData"></ngx-json-viewer>
+    </div>
+
 
     <div class="error-text" *ngIf="errorData.json">
       {{errorData.json}}
     </div>
   </div>
-</div>
 </div>

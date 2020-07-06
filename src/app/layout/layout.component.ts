@@ -8,7 +8,7 @@ import { Router, NavigationEnd } from '@angular/router';
 })
 export class LayoutComponent implements OnInit {
   activeMenu: any = '';
-  heading: any = 'Bins Helpdev';
+  heading: any = 'HelpHub';
   constructor(private commonService: CommonService, private route: Router) {
     this.route.events.subscribe((event) => {
       

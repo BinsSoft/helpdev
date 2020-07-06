@@ -1,25 +1,24 @@
 <div class="action-conatiner">
-    <div class="action-header">
-      <h2>Enter Text  for {{ type }} {{ method }}:</h2>
+  <div class="left-container">
+   <!--  <div class="action-header">
+      <h2>:</h2>
       <div class="right-action-header">
         <button (click)="convert()">Convert</button>
         <button (click)="reset()">Reset</button>
       </div>
       <div class="clearfix"></div>
-    </div>
-    <textarea *ngIf="type!='base64-file'" [(ngModel)]="convertKeyWord"></textarea>
+    </div> -->
+    <textarea class="converter-textarea encoder" placeholder="Enter Text to {{ type }} {{ method }}" *ngIf="type!='base64-file'" [(ngModel)]="convertKeyWord"></textarea>
     <input type="file" *ngIf="type=='base64-file'" #uploadFile />
-    <div class="result-container">
-      <div class="action-header">
-        <h2>Result :</h2>
-        <div class="right-action-header">
-          <button (click)="copy()">Copy</button>
-        </div>
-        <div class="clearfix"></div>
-      </div>
+  </div>
+  <div class="mid-container">
+    <button (click)="convert()">Convert</button>
+    <button (click)="reset()">Reset</button>
+    <button (click)="copy()">Copy</button>
+  </div>
+  <div class="right-container">
       <div class="result-content" id="resultContent">
         {{convertResult}}
       </div>
-    </div>
   </div>
-  
+</div>

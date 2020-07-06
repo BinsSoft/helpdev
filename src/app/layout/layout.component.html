@@ -1,6 +1,8 @@
 <div class="container">
   <div class="header">
-    <div class="header-heading">{{ heading }}</div>
+    <div class="header-heading">
+      <a [routerLink]="['/']"><img src="/assets/help_hub.png"/></a>
+    </div>
 
     <ul class="dropdown dropdown2">
       <li class="dropdown-li" [class.active]="activeMenu == 'encode_decode'">
