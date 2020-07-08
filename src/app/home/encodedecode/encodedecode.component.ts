@@ -8,11 +8,12 @@ import { sha256, sha224 } from 'js-sha256';
   styleUrls: ['./encodedecode.component.scss']
 })
 export class EncodedecodeComponent implements OnInit {
-  @ViewChild('uploadFile')uploadFile;
+  @ViewChild('uploadFile', {static: false})uploadFile;
   method: any = '';
   type: any = '';
   convertKeyWord: any = '';
   convertResult : any = '';
+  options:any = {maxLines: 1000, printMargin: false};
   constructor(private activatedRoute: ActivatedRoute) {
     this.activatedRoute.params.subscribe((params)=>{
       this.method = params.method;

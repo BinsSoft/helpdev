@@ -11,14 +11,18 @@ import { LandingComponent } from './landing/landing.component';
 import { FormaterComponent } from './formater/formater.component';
 import { ConverterComponent } from './converter/converter.component';
 import { OnlynumaricinputDirective } from './onlynumaricinput.directive';
+import { ClockComponent } from './timestamp/clock/clock.component';
+
+import { AceEditorModule } from 'ng2-ace-editor';
 @NgModule({
-  declarations: [ EncodedecodeComponent, TimestampComponent, LandingComponent, FormaterComponent, ConverterComponent,OnlynumaricinputDirective],
+  declarations: [ EncodedecodeComponent, TimestampComponent, LandingComponent, FormaterComponent, ConverterComponent,OnlynumaricinputDirective, ClockComponent],
   imports: [
     CommonModule,
     HomeRoutingModule,
     FormsModule,
     NgSelectModule,
-    NgxJsonViewerModule
+    NgxJsonViewerModule,
+    AceEditorModule
   ]
 })
 export class HomeModule { }

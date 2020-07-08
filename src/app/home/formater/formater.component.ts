@@ -7,7 +7,7 @@ import * as beautify from "js-beautify";
   styleUrls: ['./formater.component.scss']
 })
 export class FormaterComponent implements OnInit {
-  @ViewChild('uploadFile') uploadFile;
+  @ViewChild('uploadFile', {static: false}) uploadFile;
   method: any = '';
   type: any = '';
   convertKeyWord: any = '';
@@ -44,7 +44,14 @@ export class FormaterComponent implements OnInit {
   }
   ngOnInit() {
   }
-
+  options:any = {
+    printMargin: false,
+    selectionStyle: 'line',
+    behavioursEnabled: true,
+    wrapBehavioursEnabled: true,
+    autoScrollEditorIntoView: true,
+    wrap: true
+  };
   convert() {
     try {
       this.errorData = {
@@ -115,29 +122,32 @@ export class FormaterComponent implements OnInit {
     }
   }
   download() {
-    var textToWrite = this.convertResult; //Your text input;
-    var textFileAsBlob = new Blob([textToWrite], {type:this.type});
-    var fileNameToSaveAs = "download."+this.type;
+    if (this.convertResult) {
 
-    var downloadLink = document.createElement("a");
-    downloadLink.download = fileNameToSaveAs;
-    downloadLink.innerHTML = "Download File";
-    if (window['webkitURL'] != null)
-    {
-        // Chrome allows the link to be clicked
-        // without actually adding it to the DOM.
-        downloadLink.href = window['webkitURL'].createObjectURL(textFileAsBlob);
+      var textToWrite = this.convertResult; //Your text input;
+      var textFileAsBlob = new Blob([textToWrite], {type:this.type});
+      var fileNameToSaveAs = "download."+this.type;
+  
+      var downloadLink = document.createElement("a");
+      downloadLink.download = fileNameToSaveAs;
+      downloadLink.innerHTML = "Download File";
+      if (window['webkitURL'] != null)
+      {
+          // Chrome allows the link to be clicked
+          // without actually adding it to the DOM.
+          downloadLink.href = window['webkitURL'].createObjectURL(textFileAsBlob);
+      }
+      else
+      {
+          // Firefox requires the link to be added to the DOM
+          // before it can be clicked.
+          downloadLink.href = window.URL.createObjectURL(textFileAsBlob);
+         // downloadLink.onclick = destroyClickedElement;
+          downloadLink.style.display = "none";
+          document.body.appendChild(downloadLink);
+      }
+  
+      downloadLink.click();
     }
-    else
-    {
-        // Firefox requires the link to be added to the DOM
-        // before it can be clicked.
-        downloadLink.href = window.URL.createObjectURL(textFileAsBlob);
-       // downloadLink.onclick = destroyClickedElement;
-        downloadLink.style.display = "none";
-        document.body.appendChild(downloadLink);
-    }
-
-    downloadLink.click();
   }
 }

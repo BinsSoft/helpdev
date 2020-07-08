@@ -1,7 +1,7 @@
 <div class="container">
   <div class="header">
     <div class="header-heading">
-      <a [routerLink]="['/']"><img src="https://binssoft.github.io/helpdev/assets/help_hub.png"/></a>
+      <a [routerLink]="['/']"><img src="/BinsSoft/helpdev/logo.png"/></a>
     </div>
 
     <ul class="dropdown dropdown2">
@@ -20,7 +20,7 @@
       </li>
 
       <li class="dropdown-li" [class.active]="activeMenu == 'format'">
-        <a>Formaters</a>
+        <a>Formatters</a>
         <div class="dropdown-content">
           <a [routerLink]="['/format','beautify', 'json']">JSON Beautify</a>
           <a [routerLink]="['/format','minify', 'json']">JSON Minify</a>
