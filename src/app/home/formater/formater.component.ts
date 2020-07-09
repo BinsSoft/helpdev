@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
 import { ActivatedRoute } from "@angular/router";
 import * as beautify from "js-beautify";
 @Component({
@@ -6,13 +6,21 @@ import * as beautify from "js-beautify";
   templateUrl: './formater.component.html',
   styleUrls: ['./formater.component.scss']
 })
-export class FormaterComponent implements OnInit {
+export class FormaterComponent implements OnInit, AfterViewInit {
   @ViewChild('uploadFile', {static: false}) uploadFile;
+  // @ViewChild('editor', {static: false}) editor;
   method: any = '';
   type: any = '';
   convertKeyWord: any = '';
   convertResult: any = '';
   jsonResultData: any = {};
+  language:any = {
+    "js":"javascript",
+    "css":"css",
+    "json":"json",
+    "html":"html"
+  };
+  selectedLanguage:any = '';
   errorData: any = {
     json: null
   }
@@ -39,19 +47,32 @@ export class FormaterComponent implements OnInit {
     this.activatedRoute.params.subscribe((params) => {
       this.method = params.method;
       this.type = params.ext;
+      this.selectedLanguage = this.language[this.type];
       this.reset();
     });
+    
+  }
+  ngAfterViewInit() {
+
   }
   ngOnInit() {
+
+  }
+  onCodeChanged(e) {
+    this.convertKeyWord = e;
   }
   options:any = {
-    printMargin: false,
-    selectionStyle: 'line',
-    behavioursEnabled: true,
-    wrapBehavioursEnabled: true,
-    autoScrollEditorIntoView: true,
-    wrap: true
-  };
+    "lineNumbers": true,
+    "contextmenu": false,
+    "minimap": {
+      "enabled": false
+    }
+  }
+  dependencies: string[] = [
+    '@types/node',
+    '@ngstack/translate', 
+    '@ngstack/code-editor'
+  ];
   convert() {
     try {
       this.errorData = {

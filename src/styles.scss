@@ -19,7 +19,13 @@ body {
 .text-center {
   text-align: center;
 }
-
+.codicon-chevron-down::before{
+  content: '>' !important;
+}
+.codicon-chevron-right::before {
+  content: '>' !important;
+  transform: rotate(90deg);
+}
 .header {
   position: relative;
   padding: 10px 10px 0 10px;
@@ -141,13 +147,17 @@ body {
     width: 45%;
     border: 1px solid #CCC;
     height: 99%;
-    // display: flex;
-    // align-self: stretch;
+
+    &.non-editor-container {
+    display: flex;
+    align-self: stretch;
+    }
     textarea {
       width: 100%;
       outline: none;
       border: none;
     }
+    ngs-code-editor,
     .ace-monokai {
       height: 100%;
       *{ font-family : monospace !important;font-size: 16px !important;direction:ltr !important;text-align:left !important;}
@@ -162,9 +172,12 @@ body {
     align-self: stretch;
     .result-content {
       width: 100%;
+      height: 99%;
       word-break: break-all;
-      // display: flex;
-      // align-self: stretch;
+      &.non-editor-container {
+        display: flex;
+        align-self: stretch;
+        }
       overflow-y: auto;
       overflow-x: hidden;
       textarea {
@@ -172,6 +185,7 @@ body {
         outline: none;
         border: none;
       }
+      ngs-code-editor,
       .ace-monokai {
         height: 100%;
         *{ font-family : monospace !important;font-size: 16px !important;direction:ltr !important;text-align:left !important;}

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import * as moment from 'moment';
 import * as timezone from './timezoneList';
-import momenttimezone from 'moment-timezone';
+import * as momenttimezone from 'moment-timezone';
 @Component({
   selector: 'app-timestamp',
   templateUrl: './timestamp.component.html',

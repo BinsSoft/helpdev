@@ -25,12 +25,20 @@
             "assets": [
               "src/favicon.ico",
               "src/assets",
-              "src/BinsSoft/helpdev"
+              "src/helpdev",
+              
+              {
+                "glob": "**/*.js",
+                "input": "../node_modules/@ngstack/code-editor/workers",
+                "output": "./assets/workers"
+              }
             ],
             "styles": [
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [
+              
+            ]
           },
           "configurations": {
             "production": {

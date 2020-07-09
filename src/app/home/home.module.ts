@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { NgSelectModule } from '@ng-select/ng-select';
 import { HomeRoutingModule } from './home-routing.module';
-import { NgxJsonViewerModule } from 'ngx-json-viewer';
+
 
 import { EncodedecodeComponent } from './encodedecode/encodedecode.component';
 import { TimestampComponent } from './timestamp/timestamp.component';
@@ -13,7 +13,8 @@ import { ConverterComponent } from './converter/converter.component';
 import { OnlynumaricinputDirective } from './onlynumaricinput.directive';
 import { ClockComponent } from './timestamp/clock/clock.component';
 
-import { AceEditorModule } from 'ng2-ace-editor';
+// import { CodeEditorModule } from '@ngstack/code-editor';
+import { CodeEditorModule, CodeEditorService } from '@ngstack/code-editor';
 @NgModule({
   declarations: [ EncodedecodeComponent, TimestampComponent, LandingComponent, FormaterComponent, ConverterComponent,OnlynumaricinputDirective, ClockComponent],
   imports: [
@@ -21,8 +22,7 @@ import { AceEditorModule } from 'ng2-ace-editor';
     HomeRoutingModule,
     FormsModule,
     NgSelectModule,
-    NgxJsonViewerModule,
-    AceEditorModule
+    CodeEditorModule.forRoot()
   ]
 })
 export class HomeModule { }
