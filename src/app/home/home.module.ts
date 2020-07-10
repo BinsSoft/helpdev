@@ -15,13 +15,16 @@ import { ClockComponent } from './timestamp/clock/clock.component';
 
 // import { CodeEditorModule } from '@ngstack/code-editor';
 import { CodeEditorModule, CodeEditorService } from '@ngstack/code-editor';
+import { NgxJsonViewerModule } from 'ngx-json-viewer';
+import { ActionContainerComponent } from './action-container/action-container.component';
 @NgModule({
-  declarations: [ EncodedecodeComponent, TimestampComponent, LandingComponent, FormaterComponent, ConverterComponent,OnlynumaricinputDirective, ClockComponent],
+  declarations: [ EncodedecodeComponent, TimestampComponent, LandingComponent, FormaterComponent, ConverterComponent,OnlynumaricinputDirective, ClockComponent, ActionContainerComponent],
   imports: [
     CommonModule,
     HomeRoutingModule,
     FormsModule,
     NgSelectModule,
+    NgxJsonViewerModule,
     CodeEditorModule.forRoot()
   ]
 })

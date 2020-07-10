@@ -13,7 +13,7 @@
       </div> 
       <div class="clearfix"></div>
     </div>-->
-    <!-- <input type="file"  #uploadFile accept=".{{type}}"  (change)="renderUploadedFile($event)"/>
+    <!-- 
     <p class="or-text">Or</p> -->
     <textarea [(ngModel)]="convertKeyWord" class="converter-textarea" 
       placeholder="Enter Text to {{ method }} {{ type }}" *ngIf="method=='beautify'"></textarea>
@@ -30,25 +30,25 @@
     </ngs-code-editor>
   </div>
   <div class="mid-container">
-    <button (click)="convert()" [disabled]="!convertKeyWord">Convert</button>
-    <button (click)="reset()" [disabled]="!convertKeyWord">Reset</button>
-    <!-- <button (click)="copy()" class="btn" [disabled]="!convertResult">Copy</button> -->
-    <button (click)="download()" [disabled]="!convertResult" class="btn">Download</button>
+    <app-action-container [config]="actionConfig" [inputText]="convertKeyWord" (result)="getResult($event)"></app-action-container>
 
   </div>
   <div class="right-container" >
-    <div class="result-content" id="resultContent" [ngClass]="{'non-editor-container':method=='minify'}">
+    <div class="result-content" id="resultContent" [ngClass]="{'non-editor-container':(method=='minify' || (type=='json' && viewMode == 'viewer'))}">
       <textarea [(ngModel)]="convertResult" class="converter-textarea" 
       placeholder="Enter Text to {{ method }} {{ type }}" *ngIf="method=='minify'">{{convertResult}}</textarea>
+      
       <ngs-code-editor 
       [value]="convertResult"
       theme="vs-dark"
       [language]="selectedLanguage"
       [options]="options"
       [dependencies]="dependencies" 
-      *ngIf="method=='beautify'"
+      *ngIf="(type=='json' && method=='beautify' && (!viewMode || (viewMode && viewMode == 'text'))) || (type!='json' && method=='beautify')"
       >
-    </ngs-code-editor>
+      </ngs-code-editor>
+
+      <ngx-json-viewer [json]="jsonResultData" [expanded]="false"  *ngIf="method=='beautify' && type=='json' && viewMode == 'viewer'"></ngx-json-viewer>
     </div>
  
 

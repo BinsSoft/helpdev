@@ -2,30 +2,224 @@
   <div class="menu-inner">
     <h2>Encode / Decode</h2>
     <div class="menu-content">
-      <a [routerLink]="['/hash','encode', 'base64']">Base64 Encode</a>
-      <a [routerLink]="['/hash','decode', 'base64']">Base64 Decode</a>
-      <a [routerLink]="['/hash','encode', 'base64-file']">File Base64 Encode</a>
-      <a [routerLink]="['/hash','encode', 'md5']">Md5 Encode</a>
-      <a [routerLink]="['/hash','encode', 'sha256']">SHA256 Encode</a>
-      <a [routerLink]="['/hash','encode', 'SHA224']">SHA224 Encode</a>
-      <a [routerLink]="['/hash','encode', 'url']">URL Encode</a>
-      <a [routerLink]="['/hash','decode', 'url']">URL Decode</a>
+      <div class="menu-item">
+        <div class="flip-box">
+          <div class="flip-box-inner">
+            <div class="flip-box-front">
+              <a [routerLink]="['/hash','encode', 'base64']">Base64 Encode</a>
+            </div>
+            <div class="flip-box-back">
+              <a [routerLink]="['/hash','encode', 'base64']">Base64 Encode</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="menu-item">
+        <div class="flip-box">
+          <div class="flip-box-inner">
+            <div class="flip-box-front">
+              <a [routerLink]="['/hash','decode', 'base64']">Base64 Decode</a>
+            </div>
+            <div class="flip-box-back">
+              <a [routerLink]="['/hash','decode', 'base64']">Base64 Decode</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="menu-item">
+        <div class="flip-box">
+          <div class="flip-box-inner">
+            <div class="flip-box-front">
+              <a [routerLink]="['/hash','encode', 'base64-file']">File Base64 Encode</a>
+            </div>
+            <div class="flip-box-back">
+              <a [routerLink]="['/hash','encode', 'base64-file']">File Base64 Encode</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="menu-item">
+        <div class="flip-box">
+          <div class="flip-box-inner">
+            <div class="flip-box-front">
+              <a [routerLink]="['/hash','encode', 'md5']">Md5 Encode</a>
+            </div>
+            <div class="flip-box-back">
+              <a [routerLink]="['/hash','encode', 'md5']">Md5 Encode</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="menu-item">
+        <div class="flip-box">
+          <div class="flip-box-inner">
+            <div class="flip-box-front">
+              <a [routerLink]="['/hash','encode', 'sha256']">SHA256 Encode</a>
+            </div>
+            <div class="flip-box-back">
+              <a [routerLink]="['/hash','encode', 'sha256']">SHA256 Encode</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="menu-item">
+        <div class="flip-box">
+          <div class="flip-box-inner">
+            <div class="flip-box-front">
+              <a [routerLink]="['/hash','encode', 'SHA224']">SHA224 Encode</a>
+            </div>
+            <div class="flip-box-back">
+              <a [routerLink]="['/hash','encode', 'SHA224']">SHA224 Encode</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="menu-item">
+        <div class="flip-box">
+          <div class="flip-box-inner">
+            <div class="flip-box-front">
+              <a [routerLink]="['/hash','encode', 'url']">URL Encode</a>
+            </div>
+            <div class="flip-box-back">
+              <a [routerLink]="['/hash','encode', 'url']">URL Encode</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="menu-item">
+        <div class="flip-box">
+          <div class="flip-box-inner">
+            <div class="flip-box-front">
+              <a [routerLink]="['/hash','decode', 'url']">URL Decode</a>
+            </div>
+            <div class="flip-box-back">
+              <a [routerLink]="['/hash','decode', 'url']">URL Decode</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
     </div>
   </div>
 
   <div class="menu-inner">
     <h2>Formatters</h2>
     <div class="menu-content">
-      <a [routerLink]="['/format','beautify', 'json']">JSON Beautify</a>
-          <a [routerLink]="['/format','minify', 'json']">JSON Minify</a>
-          <a [routerLink]="['/format','beautify', 'js']">Javascript Beautify</a>
-          <a [routerLink]="['/format','minify', 'js']">Javascript Minify</a>
-          <a [routerLink]="['/format','beautify', 'css']">CSS Beautify</a>
-          <a [routerLink]="['/format','minify', 'css']">CSS Minify</a>
-          <a [routerLink]="['/format','beautify', 'html']">HTML Beautify</a>
-          <a [routerLink]="['/format','minify', 'html']">HTML Minify</a>
+      <div class="menu-item">
+        <div class="flip-box">
+          <div class="flip-box-inner">
+            <div class="flip-box-front">
+              <a [routerLink]="['/format','beautify', 'json']">JSON Beautify</a>
+            </div>
+            <div class="flip-box-back">
+              <a [routerLink]="['/format','beautify', 'json']">JSON Beautify</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="menu-item">
+        <div class="flip-box">
+          <div class="flip-box-inner">
+            <div class="flip-box-front">
+              <a [routerLink]="['/format','minify', 'json']">JSON Minify</a>
+            </div>
+            <div class="flip-box-back">
+              <a [routerLink]="['/format','minify', 'json']">JSON Minify</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="menu-item">
+        <div class="flip-box">
+          <div class="flip-box-inner">
+            <div class="flip-box-front">
+              <a [routerLink]="['/format','beautify', 'js']">Javascript Beautify</a>
+            </div>
+            <div class="flip-box-back">
+              <a [routerLink]="['/format','beautify', 'js']">Javascript Beautify</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="menu-item">
+        <div class="flip-box">
+          <div class="flip-box-inner">
+            <div class="flip-box-front">
+              <a [routerLink]="['/format','minify', 'js']">Javascript Minify</a>
+            </div>
+            <div class="flip-box-back">
+              <a [routerLink]="['/format','minify', 'js']">Javascript Minify</a>
+            </div>
+          </div>
+        </div>
+      </div> 
+      <div class="menu-item">
+        <div class="flip-box">
+          <div class="flip-box-inner">
+            <div class="flip-box-front">
+              <a [routerLink]="['/format','beautify', 'css']">CSS Beautify</a>
+            </div>
+            <div class="flip-box-back">
+              <a [routerLink]="['/format','beautify', 'css']">CSS Beautify</a>
+            </div>
+          </div>
+        </div>
+      </div> 
+      <div class="menu-item">
+        <div class="flip-box">
+          <div class="flip-box-inner">
+            <div class="flip-box-front">
+              <a [routerLink]="['/format','minify', 'css']">CSS Minify</a>
+            </div>
+            <div class="flip-box-back">
+              <a [routerLink]="['/format','minify', 'css']">CSS Minify</a>
+            </div>
+          </div>
+        </div>
+      </div> 
+      <div class="menu-item">
+        <div class="flip-box">
+          <div class="flip-box-inner">
+            <div class="flip-box-front">
+              <a [routerLink]="['/format','beautify', 'html']">HTML Beautify</a>
+            </div>
+            <div class="flip-box-back">
+              <a [routerLink]="['/format','beautify', 'html']">HTML Beautify</a>
+            </div>
+          </div>
+        </div>
+      </div>   
+      <div class="menu-item">
+        <div class="flip-box">
+          <div class="flip-box-inner">
+            <div class="flip-box-front">
+              <a [routerLink]="['/format','minify', 'html']">HTML Minify</a>
+            </div>
+            <div class="flip-box-back">
+              <a [routerLink]="['/format','minify', 'html']">HTML Minify</a>
+            </div>
+          </div>
+        </div>
+      </div>   
+          
           
     </div>
   </div>
-
+  <div class="menu-inner">
+    <h2>Time Converter</h2>
+    <div class="menu-content">
+      <div class="menu-item">
+        <div class="flip-box">
+          <div class="flip-box-inner">
+            <div class="flip-box-front">
+              <a [routerLink]="['/timestamp']">Timestamp</a>
+            </div>
+            <div class="flip-box-back">
+              <a [routerLink]="['/timestamp']">Timestamp</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

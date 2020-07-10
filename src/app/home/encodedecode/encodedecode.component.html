@@ -9,12 +9,16 @@
       <div class="clearfix"></div>
     </div> -->
     <textarea class="converter-textarea encoder" placeholder="Enter Text to {{ type }} {{ method }}" *ngIf="type!='base64-file'" [(ngModel)]="convertKeyWord"></textarea>
-    <input type="file" *ngIf="type=='base64-file'" #uploadFile />
+    
+    <div *ngIf="convertKeyWord && type=='base64-file'" class="upload-file-container">
+      <img *ngIf="uploadFileData.isImage" [src]="convertKeyWord" class="upload-image" />
+      <img *ngIf="!uploadFileData.isImage" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjxzdmcgZW5hYmxlLWJhY2tncm91bmQ9Im5ldyAwIDAgMzIgMzIiIGhlaWdodD0iMzJweCIgaWQ9InN2ZzIiIHZlcnNpb249IjEuMSIgdmlld0JveD0iMCAwIDMyIDMyIiB3aWR0aD0iMzJweCIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczpjYz0iaHR0cDovL2NyZWF0aXZlY29tbW9ucy5vcmcvbnMjIiB4bWxuczpkYz0iaHR0cDovL3B1cmwub3JnL2RjL2VsZW1lbnRzLzEuMS8iIHhtbG5zOmlua3NjYXBlPSJodHRwOi8vd3d3Lmlua3NjYXBlLm9yZy9uYW1lc3BhY2VzL2lua3NjYXBlIiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiIHhtbG5zOnNvZGlwb2RpPSJodHRwOi8vc29kaXBvZGkuc291cmNlZm9yZ2UubmV0L0RURC9zb2RpcG9kaS0wLmR0ZCIgeG1sbnM6c3ZnPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGcgaWQ9ImJhY2tncm91bmQiPjxyZWN0IGZpbGw9Im5vbmUiIGhlaWdodD0iMzIiIHdpZHRoPSIzMiIvPjwvZz48ZyBpZD0iZG9jdW1lbnRfeDVGX3RleHRfeDVGX2VkaXQiPjxwYXRoIGQ9Ik0yNCwxNC4wNTlWNS41ODRMMTguNDE0LDBIMHYzMmgyNHYtMC4wNTljNC40OTktMC41LDcuOTk4LTQuMzA5LDgtOC45NDFDMzEuOTk4LDE4LjM2NiwyOC40OTksMTQuNTU2LDI0LDE0LjA1OXogICAgTTE3Ljk5OCwyLjQxM0wyMS41ODYsNmgtMy41ODhWMi40MTN6IE0yLDMwVjEuOTk4aDE0djYuMDAxaDZ2Ni4wNmMtMS43NTIsMC4xOTQtMy4zNTIsMC44OS00LjY1MiwxLjk0MUg0djJoMTEuNTE3ICAgYy0wLjQxMiwwLjYxNi0wLjc0MywxLjI4OS0wLjk5NCwySDR2MmgxMC4wNTlDMTQuMDIyLDIyLjMyOSwxNCwyMi42NjEsMTQsMjNjMCwyLjgyOSwxLjMwOCw1LjM1MSwzLjM0OSw3SDJ6IE0yMywyOS44ODMgICBjLTMuODAxLTAuMDA5LTYuODc2LTMuMDg0LTYuODg1LTYuODgzYzAuMDA5LTMuODAxLDMuMDg0LTYuODc2LDYuODg1LTYuODg1YzMuNzk5LDAuMDA5LDYuODc0LDMuMDg0LDYuODgzLDYuODg1ICAgQzI5Ljg3NCwyNi43OTksMjYuNzk5LDI5Ljg3NCwyMywyOS44ODN6IE0yMCwxMkg0djJoMTZWMTJ6Ii8+PGc+PHBvbHlnb24gcG9pbnRzPSIyMiwyNyAxOSwyNyAxOSwyNCAgICIvPjxyZWN0IGhlaWdodD0iNC4yNDMiIHRyYW5zZm9ybT0ibWF0cml4KC0wLjcwNzEgMC43MDcxIC0wLjcwNzEgLTAuNzA3MSA1Ni41MjY5IDIwLjU4NTgpIiB3aWR0aD0iNy4wNzEiIHg9IjIwLjQ2NCIgeT0iMTkuODc5Ii8+PC9nPjwvZz48L3N2Zz4=" />
+      <div *ngIf="!uploadFileData.isImage">{{uploadFileData.name}}</div>
+    </div>
   </div>
   <div class="mid-container">
-    <button (click)="convert()">Convert</button>
-    <button (click)="reset()">Reset</button>
-    <button (click)="copy()">Copy</button>
+    <app-action-container [config]="actionConfig" [inputText]="convertKeyWord" (result)="getResult($event)"></app-action-container>
+
   </div>
   <div class="right-container">
       <div class="result-content non-editor-container" id="resultContent">

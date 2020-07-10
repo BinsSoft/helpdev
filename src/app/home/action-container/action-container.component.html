@@ -1,0 +1,11 @@
+<input type="file"  #uploadFile accept=".{{type}}"  (change)="renderUploadedFile($event)" style="display: none;"/>
+<button (click)="selectFile()" >Select File</button>
+<button (click)="convert()" [disabled]="!inputText">Convert</button>
+<button (click)="reset()" [disabled]="!inputText">Reset</button>
+<!-- <button (click)="copy()" class="btn" [disabled]="!convertResult">Copy</button> -->
+<button (click)="download()" [disabled]="!inputText" class="btn">Download</button>
+
+<button [disabled]="!resultText" [ngClass]="{'active':(!config.viewMode || (config.viewMode && config.viewMode == 'text'))}" (click)="setViewMode('text')"
+    *ngIf="config.method=='beautify' && config.type=='json'">Text Mode</button>
+<button [disabled]="!resultText" [ngClass]="{'active':(config.viewMode && config.viewMode == 'viewer')}" (click)="setViewMode('viewer')"
+    *ngIf="config.method=='beautify' && config.type=='json'">Viewer Mode</button>
