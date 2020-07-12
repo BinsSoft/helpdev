@@ -1,0 +1,24 @@
+<div class="top-container">
+  <div class="col-left"><input type="file" #uploadLeft  (change)="renderUploadedFile($event,'left')" /></div>
+  <div class="col-right"><input type="file" #uploadRight (change)="renderUploadedFile($event, 'right')" /></div>
+</div>
+<div class="action-conatiner" *ngIf="!compareStatus">
+  <div class="left-container non-editor-container" >
+    
+    <textarea [(ngModel)]="leftContent" class="converter-textarea" 
+      placeholder="Enter your text" ></textarea>
+  </div>
+  <div class="mid-container">
+    <button [disabled]="!leftContent || !rightContent" (click)="compare()">Compare</button>
+    <button [disabled]="!leftContent || !rightContent" (click)="reset()">Reset</button>
+  </div>
+  <div class="left-container non-editor-container">
+    
+    <textarea [(ngModel)]="rightContent" class="converter-textarea" 
+      placeholder="Enter your text" ></textarea>
+  </div>
+</div>
+<div class="compare-btn-content">
+  <button *ngIf="compareStatus" (click)="reset()">Compare Another Content</button>
+</div>
+<td-ngx-text-diff *ngIf="compareStatus" [left]="leftContent" [right]="rightContent" class="compare-result-content">

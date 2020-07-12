@@ -5,6 +5,7 @@ import { TimestampComponent } from './timestamp/timestamp.component';
 import { LandingComponent } from './landing/landing.component';
 import { FormaterComponent } from './formater/formater.component';
 import { ConverterComponent } from './converter/converter.component';
+import { ComparerComponent } from './comparer/comparer.component';
 const routes: Routes = [
   {
     path :"",
@@ -25,6 +26,10 @@ const routes: Routes = [
   {
     path :"converter/:method",
     component: ConverterComponent
+  },
+  {
+    path :"comparer",
+    component: ComparerComponent
   },
 ];
 

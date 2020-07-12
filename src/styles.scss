@@ -56,6 +56,24 @@ body {
     }
   }
 }
+%button-style {
+  button {
+    background-color: #3e3e3e !important;
+    border: none !important;
+    color: #FFF;
+    margin: 2px 0;
+    padding: 10px;
+    outline: none;
+    cursor: pointer;
+    min-width: 100px;
+    &:hover,&.active {
+      background: #4caf50 !important;
+    }
+    &:disabled {
+      background-color: #828282 !important;
+    }
+  }
+}
 .dropdown {
   position: relative;
   float: right;
@@ -113,7 +131,12 @@ body {
   color: #FFF;
 
 }
-
+.compare-result-content {
+    
+  .td-toolbar-select-format {
+    @extend %button-style;
+  }
+}
 .content {
   background: #FFF;
   margin: 0 10px;
@@ -196,23 +219,8 @@ body {
       app-action-container {
           display: flex;
           flex-direction: column;
-          button {
-            background-color: #3e3e3e;
-            border: none;
-            color: #FFF;
-            margin: 2px 0;
-            padding: 10px;
-            outline: none;
-            cursor: pointer;
-            width: 100px;
-            &:hover,&.active {
-              background: #4caf50;
-            }
-            &:disabled {
-              background-color: #828282;
-            }
-          }
-      }
+        }
+       @extend %button-style;
   }
   .ngx-json-viewer {
     font-size: 13px !important;
@@ -260,6 +268,7 @@ body {
       font-weight: normal;
     }
   }
+
 
   .action-header {
     h2 {
@@ -359,6 +368,11 @@ body {
       }
     }
   }
+}
+.compare-btn-content {
+  text-align: center;
+  @extend %button-style;
+
 }
 
 div#resultContent textarea {

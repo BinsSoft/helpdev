@@ -17,15 +17,19 @@ import { ClockComponent } from './timestamp/clock/clock.component';
 import { CodeEditorModule, CodeEditorService } from '@ngstack/code-editor';
 import { NgxJsonViewerModule } from 'ngx-json-viewer';
 import { ActionContainerComponent } from './action-container/action-container.component';
+import { ComparerComponent } from './comparer/comparer.component';
+
+import { NgxTextDiffModule } from 'ngx-text-diff';
 @NgModule({
-  declarations: [ EncodedecodeComponent, TimestampComponent, LandingComponent, FormaterComponent, ConverterComponent,OnlynumaricinputDirective, ClockComponent, ActionContainerComponent],
+  declarations: [ EncodedecodeComponent, TimestampComponent, LandingComponent, FormaterComponent, ConverterComponent,OnlynumaricinputDirective, ClockComponent, ActionContainerComponent, ComparerComponent],
   imports: [
     CommonModule,
     HomeRoutingModule,
     FormsModule,
     NgSelectModule,
     NgxJsonViewerModule,
-    CodeEditorModule.forRoot()
+    CodeEditorModule.forRoot(),
+    NgxTextDiffModule
   ]
 })
 export class HomeModule { }
