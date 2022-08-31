@@ -27,7 +27,7 @@
     "js-beautify": "^1.9.1",
     "js-sha256": "^0.9.0",
     "moment": "^2.27.0",
-    "moment-timezone": "^0.5.31",
+    "moment-timezone": "^0.5.35",
     "monaco-editor": "^0.20.0",
     "ngx-json-viewer": "^2.4.0",
     "ngx-text-diff": "^0.5.4",
