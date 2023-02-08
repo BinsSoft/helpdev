@@ -9,3 +9,7 @@
     *ngIf="config.method=='beautify' && config.type=='json'">Text Mode</button>
 <button [disabled]="!resultText" [ngClass]="{'active':(config.viewMode && config.viewMode == 'viewer')}" (click)="setViewMode('viewer')"
     *ngIf="config.method=='beautify' && config.type=='json'">Viewer Mode</button>
+
+<!--<div>-->
+<!--  <label><input type="checkbox" (change)="fullScreenView($event)"> Full Screen</label>-->
+<!--</div>-->

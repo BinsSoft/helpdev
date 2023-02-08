@@ -1,29 +1,33 @@
 <div class="top-container">
   <div class="col-left">Enter Your Text</div>
+  <div class="col-center">
+    <div class="error-text" *ngIf="errorData.json">
+    {{errorData.json}}
+  </div></div>
   <div class="col-right">Expected Result</div>
 </div>
 <div class="action-conatiner">
-  
+
   <div class="left-container" [ngClass]="{'non-editor-container':method=='beautify'}">
     <!--<div class="action-header">
       <h2> {{ method }} {{ type }} :</h2>
        <div class="right-action-header">
         <button (click)="convert()">Convert</button>
         <button (click)="reset()">Reset</button>
-      </div> 
+      </div>
       <div class="clearfix"></div>
     </div>-->
-    <!-- 
+    <!--
     <p class="or-text">Or</p> -->
-    <textarea [(ngModel)]="convertKeyWord" class="converter-textarea" 
+    <textarea [(ngModel)]="convertKeyWord" class="converter-textarea"
       placeholder="Enter Text to {{ method }} {{ type }}" *ngIf="method=='beautify'"></textarea>
-      
-      <ngs-code-editor 
+
+      <ngs-code-editor
       [value]="convertKeyWord"
       theme="vs-dark"
       [language]="selectedLanguage"
       [options]="options"
-      [dependencies]="dependencies" 
+      [dependencies]="dependencies"
       (valueChanged)="onCodeChanged($event)"
       *ngIf="method=='minify'"
       >
@@ -33,27 +37,25 @@
     <app-action-container [config]="actionConfig" [inputText]="convertKeyWord" (result)="getResult($event)"></app-action-container>
 
   </div>
-  <div class="right-container" >
+  <div class="right-container" [ngClass]="{'full-screen': fullScreen}">
     <div class="result-content" id="resultContent" [ngClass]="{'non-editor-container':(method=='minify' || (type=='json' && viewMode == 'viewer'))}">
-      <textarea [(ngModel)]="convertResult" class="converter-textarea" 
+      <textarea [(ngModel)]="convertResult" class="converter-textarea"
       placeholder="Enter Text to {{ method }} {{ type }}" *ngIf="method=='minify'">{{convertResult}}</textarea>
-      
-      <ngs-code-editor 
+
+      <ngs-code-editor
       [value]="convertResult"
       theme="vs-dark"
       [language]="selectedLanguage"
       [options]="options"
-      [dependencies]="dependencies" 
+      [dependencies]="dependencies"
       *ngIf="(type=='json' && method=='beautify' && (!viewMode || (viewMode && viewMode == 'text'))) || (type!='json' && method=='beautify')"
       >
       </ngs-code-editor>
 
       <ngx-json-viewer [json]="jsonResultData" [expanded]="false"  *ngIf="method=='beautify' && type=='json' && viewMode == 'viewer'"></ngx-json-viewer>
     </div>
- 
 
-    <div class="error-text" *ngIf="errorData.json">
-      {{errorData.json}}
-    </div>
+
+
   </div>
 </div>

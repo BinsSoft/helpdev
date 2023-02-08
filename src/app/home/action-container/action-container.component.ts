@@ -2,6 +2,7 @@ import { Component, OnInit, Input, Output, EventEmitter, ViewChild, ElementRef }
 import * as beautify from "js-beautify";
 import {Md5} from 'ts-md5/dist/md5';
 import { sha256, sha224 } from 'js-sha256';
+import {EmitService} from '../../services/emit.service';
 @Component({
   selector: 'app-action-container',
   templateUrl: './action-container.component.html',
@@ -39,10 +40,12 @@ export class ActionContainerComponent implements OnInit {
     "e4x": false,
     "indent_empty_lines": false
   }
-  constructor() { }
+  constructor(
+    private emitService: EmitService
+  ) { }
 
   ngOnInit() {
-    
+
   }
   convert() {
     if (this.config['action'] == 'format') {
@@ -107,7 +110,7 @@ export class ActionContainerComponent implements OnInit {
         text: this.resultText
       });
     }
-    
+
   }
   convertFormatData() {
     try {
@@ -119,8 +122,15 @@ export class ActionContainerComponent implements OnInit {
       this.method = this.config['method'];
       this.type = this.config['type'];
       if (this.method == 'beautify' && this.type == 'json') {
-        this.jsonResultData = JSON.parse(this.inputText);
-        this.resultText = JSON.stringify(JSON.parse(this.inputText),null, 4);
+        try {
+
+          this.jsonResultData = JSON.parse(this.inputText);
+          this.resultText = JSON.stringify(JSON.parse(this.inputText),null, 4);
+        } catch (e) {
+          this.emitService.errorEmitter.emit({
+            JSON: e.toString()
+          });
+        }
       }
       else if (this.method == 'minify' && this.type == 'json') {
         this.resultText = JSON.stringify(JSON.parse(this.inputText));
@@ -162,7 +172,7 @@ export class ActionContainerComponent implements OnInit {
       var textToWrite = this.resultText; //Your text input;
       var textFileAsBlob = new Blob([textToWrite], {type:this.type});
       var fileNameToSaveAs = "download."+this.type;
-  
+
       var downloadLink = document.createElement("a");
       downloadLink.download = fileNameToSaveAs;
       downloadLink.innerHTML = "Download File";
@@ -181,7 +191,7 @@ export class ActionContainerComponent implements OnInit {
           downloadLink.style.display = "none";
           document.body.appendChild(downloadLink);
       }
-  
+
       downloadLink.click();
     }
   }
@@ -222,6 +232,10 @@ export class ActionContainerComponent implements OnInit {
         reader.readAsText(file);
       }
     }
+  }
+
+  fullScreenView(e) {
+    this.emitService.fullScreenEmitter.emit(e.target.checked);
   }
 
 }

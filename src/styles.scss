@@ -32,7 +32,7 @@ body {
 
   .header-heading {
     color: #FFF;
-    
+
     font-weight: bold;
     float: left;
     img {
@@ -52,7 +52,7 @@ body {
       display: flex;
       justify-content: space-evenly;
       flex-wrap: wrap;
-      
+
     }
   }
 }
@@ -132,7 +132,7 @@ body {
 
 }
 .compare-result-content {
-    
+
   .td-toolbar-select-format {
     @extend %button-style;
   }
@@ -178,10 +178,10 @@ body {
     ngs-code-editor,
     .ace-monokai {
       height: 100%;
-      *{ font-family : monospace !important;font-size: 16px !important;direction:ltr !important;text-align:left !important;}
+      *{ font-size: 12px !important;direction:ltr !important;text-align:left !important;}
     }
   }
-  
+
   .right-container {
     width: 45%;
     border: 1px solid #CCC;
@@ -207,9 +207,9 @@ body {
       ngs-code-editor,
       .ace-monokai {
         height: 100%;
-        *{ font-family : monospace !important;font-size: 16px !important;direction:ltr !important;text-align:left !important;}
+        *{ font-size: 12px !important;direction:ltr !important;text-align:left !important;}
       }
-      
+
     }
   }
   .mid-container {
@@ -227,7 +227,7 @@ body {
     padding: 5px;
     height: auto !important;
     word-break: break-all;
-    
+
     .toggler {
       line-height: 0 !important;
       &:after {
@@ -254,7 +254,7 @@ body {
         }
       }
     }
-    
+
     .segment.segment-type-object, .segment.segment-type-array {
         border-left: 1px solid #ececec;
     }
@@ -298,7 +298,7 @@ body {
         position: relative;
         text-align: center;
         padding-bottom: 10px;
-    
+
         .time-stamp-text {
           position: relative;
           width: 99%;
@@ -310,11 +310,11 @@ body {
           text-align: center;
           outline: none;
         }
-    
+
         .time-text {
           position: relative;
           width: 60px;
-    
+
           border: none;
           border-bottom: 1px solid #CCC;
           padding: 10px;
@@ -323,7 +323,7 @@ body {
           text-align: center;
           outline: none;
         }
-    
+
         .convert-btn {
           background-color: #3e3e3e;
           padding: 10px;
@@ -340,7 +340,7 @@ body {
         }
       }
     }
-    .right-container { 
+    .right-container {
       display: block;
       .input-container {
         display: flex;
@@ -490,8 +490,8 @@ div#resultContent textarea {
         font-size: 30px;
         font-weight: bold;
     }
-    
-    
+
+
       label {
         display: inline-block;
         width: 200px;
@@ -504,7 +504,12 @@ div#resultContent textarea {
 
 .error-text {
   color: red;
-  font-size: 16px;
+  font-size: 14px;
+  background: #ffcbcb;
+  padding: 10px;
+  text-align: center;
+  width: 50%;
+  margin: 0 auto;
 }
 
 .or-text {
