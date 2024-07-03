@@ -8,44 +8,47 @@
       <li class="dropdown-li" [class.active]="activeMenu == 'encode_decode'">
         <a>Encode / Decode</a>
         <div class="dropdown-content">
-          <a [routerLink]="['/hash','encode', 'base64']">Base64 Encode</a>
-          <a [routerLink]="['/hash','decode', 'base64']">Base64 Decode</a>
-          <a [routerLink]="['/hash','encode', 'base64-file']">File Base64 Encode</a>
-          <a [routerLink]="['/hash','encode', 'md5']">Md5 Encode</a>
-          <a [routerLink]="['/hash','encode', 'sha256']">SHA256 Encode</a>
-          <a [routerLink]="['/hash','encode', 'SHA224']">SHA224 Encode</a>
-          <a [routerLink]="['/hash','encode', 'url']">URL Encode</a>
-          <a [routerLink]="['/hash','decode', 'url']">URL Decode</a>
+          <span>Encode</span>
+          <a [routerLink]="['/hash','encode', 'base64']">Base64</a>
+          <a [routerLink]="['/hash','encode', 'base64-file']">File Base64</a>
+          <a [routerLink]="['/hash','encode', 'md5']">Md5</a>
+          <a [routerLink]="['/hash','encode', 'sha256']">SHA256</a>
+          <a [routerLink]="['/hash','encode', 'SHA224']">SHA224</a>
+          <a [routerLink]="['/hash','encode', 'url']">URL</a>
+          <span>Decode</span>
+          <a [routerLink]="['/hash','decode', 'base64']">Base64</a>
+          <a [routerLink]="['/hash','decode', 'url']">URL</a>
         </div>
       </li>
 
       <li class="dropdown-li" [class.active]="activeMenu == 'format'">
         <a>Formatters</a>
         <div class="dropdown-content">
-          <a [routerLink]="['/format','beautify', 'json']">JSON Beautify</a>
-          <a [routerLink]="['/format','minify', 'json']">JSON Minify</a>
+          <span>Beautify</span>
+          <a [routerLink]="['/format','beautify', 'json']">JSON</a>
+          <a [routerLink]="['/format','beautify', 'js']">Javascript</a>
+          <a [routerLink]="['/format','beautify', 'css']">CSS</a>
+          <a [routerLink]="['/format','beautify', 'html']">HTML</a>
+          <span>Minify</span>
+          <a [routerLink]="['/format','minify', 'json']">JSON</a>
+          <a [routerLink]="['/format','minify', 'js']">Javascript</a>
+          <a [routerLink]="['/format','minify', 'css']">CSS</a>
+          <a [routerLink]="['/format','minify', 'html']">HTML</a>
 
-          <a [routerLink]="['/format','beautify', 'js']">Javascript Beautify</a>
-          <a [routerLink]="['/format','minify', 'js']">Javascript Minify</a>
-
-          <a [routerLink]="['/format','beautify', 'css']">CSS Beautify</a>
-          <a [routerLink]="['/format','minify', 'css']">CSS Minify</a>
-
-          <a [routerLink]="['/format','beautify', 'html']">HTML Beautify</a>
-          <a [routerLink]="['/format','minify', 'html']">HTML Minify</a>
-          
         </div>
       </li>
       <!-- <li class="dropdown-li" [class.active]="activeMenu == 'converter'">
         <a>Converter</a>
         <div class="dropdown-content">
           <a [routerLink]="['/converter','data-size']">Data Size</a>
-          
+
         </div>
       </li> -->
       <li class="dropdown-li" [class.active]="activeMenu == 'timestamp'"><a [routerLink]="['/timestamp']">TimeStamp</a>
       </li>
       <li class="dropdown-li" [class.active]="activeMenu == 'comparer'"><a [routerLink]="['/comparer']">Comparer</a>
+      </li>
+      <li class="dropdown-li" ><a target="_blank" href="https://binssoft.github.io/editor/">Stack Bins</a>
       </li>
     </ul>
     <div class="clearfix"></div>
